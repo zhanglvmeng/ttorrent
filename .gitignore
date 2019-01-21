@@ -17,9 +17,12 @@
 # Ignore common editor swap files
 *.swp
 *.bak
+*.iml
 *~
 *~
 
 #ignore idea workspace file and idea module files
-*.iml
 .idea/workspace.xml
+.idea/*.iml
+
+.gitignore

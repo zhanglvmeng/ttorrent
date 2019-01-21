@@ -89,10 +89,13 @@ public class Tracker {
   public Tracker(int port, String announceURL) throws IOException {
     myPort = port;
     myAnnounceUrl = announceURL;
+    // 定义10个 TrackedTorrent
     myTorrentsRepository = new TorrentsRepository(10);
+    // 为当前torrent创建请求处理器
     final TrackerRequestProcessor requestProcessor = new TrackerRequestProcessor(myTorrentsRepository);
     myTrackerServiceContainer = new TrackerServiceContainer(requestProcessor,
             new MultiAnnounceRequestProcessor(requestProcessor));
+    // 定义客户端收集器线程
     myPeerCollectorThread = new PeerCollectorThread(myTorrentsRepository);
   }
 
@@ -148,6 +151,7 @@ public class Tracker {
   public void start(final boolean startPeerCleaningThread) throws IOException {
     logger.info("Starting BitTorrent tracker on {}...",
             getAnnounceUrl());
+    // 定义http连接，并启动服务。
     connection = new SocketConnection(new ContainerServer(myTrackerServiceContainer));
 
     List<SocketAddress> tries = new ArrayList<SocketAddress>() {{

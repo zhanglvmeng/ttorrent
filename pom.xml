@@ -152,20 +152,20 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.12.3</version>
-                <configuration>
-                    <argLine>-Xmx768M</argLine>
-                    <systemPropertyVariables>
-                        <com.turn.ttorrent.logLevel>${testLogLevel}</com.turn.ttorrent.logLevel>
-                        <java.nio.channels.spi.SelectorProvider>${java.nio.channels.spi.SelectorProvider}
-                        </java.nio.channels.spi.SelectorProvider>
-                        <buildDirectory>${project.build.directory}</buildDirectory>
-                    </systemPropertyVariables>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-surefire-plugin</artifactId>-->
+                <!--<version>2.12.3</version>-->
+                <!--<configuration>-->
+                    <!--<argLine>-Xmx768M</argLine>-->
+                    <!--<systemPropertyVariables>-->
+                        <!--<com.turn.ttorrent.logLevel>${testLogLevel}</com.turn.ttorrent.logLevel>-->
+                        <!--<java.nio.channels.spi.SelectorProvider>${java.nio.channels.spi.SelectorProvider}-->
+                        <!--</java.nio.channels.spi.SelectorProvider>-->
+                        <!--<buildDirectory>${project.build.directory}</buildDirectory>-->
+                    <!--</systemPropertyVariables>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
